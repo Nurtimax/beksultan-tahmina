@@ -1,0 +1,7 @@
+{
+  "name": "beksultan-aka-toi",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}

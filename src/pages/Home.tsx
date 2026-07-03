@@ -5,6 +5,7 @@ import { useAudio } from "../hooks/useAudio";
 import { IonContent, IonPage } from "@ionic/react";
 import Envelope from "../components/Envelope";
 import FabVolume from "../components/FabVolume";
+import WeddingVideo from "../components/WeddingVideo";
 
 const HomePage: React.FC = () => {
   const { audioState, startMusic, stopMusic, changeTrack } = useAudio();
@@ -79,7 +80,7 @@ const HomePage: React.FC = () => {
         onIonScroll={handleScroll}
       >
         <Envelope handleToggle={handleToggle}>
-          <div>IonContent</div>
+          <WeddingVideo />
           <FabVolume />
         </Envelope>
       </IonContent>

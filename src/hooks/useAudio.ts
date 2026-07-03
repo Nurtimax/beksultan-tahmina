@@ -1,7 +1,7 @@
 // hooks/useAudio.ts
 import { useEffect, useRef, useState } from "react";
 
-interface AudioState {
+export interface AudioState {
   isPlaying: boolean;
   currentTrack: number;
   volume: number; // Үн деңгээлин коштук

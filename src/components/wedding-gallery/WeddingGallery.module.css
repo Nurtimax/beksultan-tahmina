@@ -1,0 +1,63 @@
+.galleryContainer {
+  height: 100vh;
+}
+
+.galleryImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 1/1; /* Сактоо үчүн квадраттык пропорция */
+}
+
+.mainImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 1/1; /* Сактоо үчүн квадраттык пропорция */
+}
+
+.galleryGrid {
+  --ion-grid-column-padding: 1px;
+}
+
+/* ========== БАШКЫ АТАЛЫШ ========== */
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-family: "Georgia", serif;
+  color: #4a2c3a;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: #7a5a6a;
+  font-weight: 300;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  animation: fadeInDown 0.8s ease-out 0.2s both;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.dividerHeart {
+  font-size: 1.5rem;
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+.dividerLine {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #e91e63, transparent);
+}

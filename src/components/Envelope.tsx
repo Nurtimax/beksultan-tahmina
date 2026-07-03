@@ -1,11 +1,10 @@
-import { FC, ReactNode, useState } from "react";
+import { FC, useState } from "react";
 import classes from "./Envelope.module.css";
 
 interface IProps {
-  children: ReactNode;
   handleToggle: () => void;
 }
-const Envelope: FC<IProps> = ({ children, handleToggle }) => {
+const Envelope: FC<IProps> = ({ handleToggle }) => {
   const [open, setOpen] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const [showContent, setShowContent] = useState(false);
@@ -29,7 +28,7 @@ const Envelope: FC<IProps> = ({ children, handleToggle }) => {
   };
 
   if (showContent) {
-    return <>{children}</>;
+    return null;
   }
 
   return (

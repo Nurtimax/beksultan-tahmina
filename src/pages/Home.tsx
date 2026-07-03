@@ -6,9 +6,11 @@ import { IonContent, IonPage } from "@ionic/react";
 import Envelope from "../components/Envelope";
 import FabVolume from "../components/FabVolume";
 import WeddingVideo from "../components/WeddingVideo";
+import WeddingGallery from "../components/wedding-gallery/WeddingGallery";
 
 const HomePage: React.FC = () => {
-  const { audioState, startMusic, stopMusic, changeTrack } = useAudio();
+  const { audioState, startMusic, stopMusic, changeTrack, setVolume } =
+    useAudio();
   const [isOpen, setIsOpen] = useState(false);
 
   const contentRef = useRef<HTMLIonContentElement>(null);
@@ -49,13 +51,13 @@ const HomePage: React.FC = () => {
     // Скролл пайызын эсептөө
     const scrollPercent = maxScroll > 0 ? (scrollTop / maxScroll) * 100 : 0;
 
-    console.log({
-      scrollTop,
-      contentHeight,
-      innerHeight,
-      maxScroll,
-      scrollPercent: Math.round(scrollPercent),
-    });
+    // console.log({
+    //   scrollTop,
+    //   contentHeight,
+    //   innerHeight,
+    //   maxScroll,
+    //   scrollPercent: Math.round(scrollPercent),
+    // });
 
     if (!isOpen || !audioState.isPlaying) return;
 
@@ -79,10 +81,10 @@ const HomePage: React.FC = () => {
         scrollEvents={true}
         onIonScroll={handleScroll}
       >
-        <Envelope handleToggle={handleToggle}>
-          <WeddingVideo />
-          <FabVolume />
-        </Envelope>
+        <Envelope handleToggle={handleToggle}></Envelope>
+        <WeddingVideo />
+        <WeddingGallery />
+        <FabVolume setVolume={setVolume} audioState={audioState} />
       </IonContent>
     </IonPage>
   );

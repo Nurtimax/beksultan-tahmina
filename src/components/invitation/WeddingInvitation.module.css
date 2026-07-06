@@ -27,17 +27,8 @@
 }
 
 .invitationCard {
-  max-width: 600px;
   width: 100%;
   background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-radius: 30px;
-  padding: 50px 40px;
-  box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.1),
-    0 0 0 1px rgba(212, 175, 55, 0.1);
-  position: relative;
-  animation: fadeInUp 0.8s ease-out;
 }
 
 @keyframes fadeInUp {
@@ -117,7 +108,6 @@
   font-size: 1.2rem;
   line-height: 1.8;
   color: #3d2c1b;
-  margin: 8px 0;
 }
 
 .invitationText strong {

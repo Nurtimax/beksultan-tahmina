@@ -8,6 +8,8 @@ import FabVolume from "../components/FabVolume";
 import WeddingVideo from "../components/WeddingVideo";
 import WeddingGallery from "../components/wedding-gallery/WeddingGallery";
 import WeddingInvitation from "../components/invitation/WeddingInvitation";
+import WeddingAddress from "../components/address/WeddingAddress";
+import ParentsInfo from "../components/ParentsInfo";
 
 const HomePage: React.FC = () => {
   const { audioState, startMusic, stopMusic, changeTrack, setVolume } =
@@ -89,6 +91,8 @@ const HomePage: React.FC = () => {
           <WeddingVideo />
           <WeddingGallery isOpen={isOpen} />
           <WeddingInvitation />
+          <WeddingAddress />
+          <ParentsInfo />
         </div>
       </IonContent>
     </IonPage>

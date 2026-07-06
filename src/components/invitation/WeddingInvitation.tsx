@@ -103,19 +103,7 @@ const WeddingInvitation: React.FC = () => {
             className={classes.invitationHeader}
             transition={itemVariantsTransition}
           >
-            <motion.h2
-              animate={{
-                scale: [1, 1.1, 1],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className={classes.greetingText}
-            >
-              Урматтуу коноктор!
-            </motion.h2>
+            <h2 className={classes.greetingText}>Урматтуу коноктор!</h2>
           </motion.div>
 
           {/* Main content */}
@@ -131,7 +119,7 @@ const WeddingInvitation: React.FC = () => {
               transition={itemVariantsTransition}
             >
               Сиздерди <strong>Бексултан</strong> жана <strong>Тахмина</strong>
-              ның үйлөнүү тоюна арналган салтанатка
+              нын үйлөнүү тоюна арналган салтанатка
             </motion.p>
             <motion.p
               variants={itemVariants}

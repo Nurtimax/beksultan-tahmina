@@ -7,6 +7,7 @@ import Envelope from "../components/Envelope";
 import FabVolume from "../components/FabVolume";
 import WeddingVideo from "../components/WeddingVideo";
 import WeddingGallery from "../components/wedding-gallery/WeddingGallery";
+import WeddingInvitation from "../components/invitation/WeddingInvitation";
 
 const HomePage: React.FC = () => {
   const { audioState, startMusic, stopMusic, changeTrack, setVolume } =
@@ -42,7 +43,7 @@ const HomePage: React.FC = () => {
     const contentHeight = contentElement.offsetHeight || 0;
 
     // #2: Ичиндеги контенттин бийиктиги
-    const innerContent = contentElement.querySelector(".envelope-container");
+    const innerContent = contentElement.querySelector(".wedding-container");
     const innerHeight = innerContent?.scrollHeight || 0;
 
     // #3: Скролл боло турган максималдуу аралык
@@ -51,13 +52,13 @@ const HomePage: React.FC = () => {
     // Скролл пайызын эсептөө
     const scrollPercent = maxScroll > 0 ? (scrollTop / maxScroll) * 100 : 0;
 
-    // console.log({
-    //   scrollTop,
-    //   contentHeight,
-    //   innerHeight,
-    //   maxScroll,
-    //   scrollPercent: Math.round(scrollPercent),
-    // });
+    console.log({
+      scrollTop,
+      contentHeight,
+      innerHeight,
+      maxScroll,
+      scrollPercent: Math.round(scrollPercent),
+    });
 
     if (!isOpen || !audioState.isPlaying) return;
 
@@ -81,10 +82,14 @@ const HomePage: React.FC = () => {
         scrollEvents={true}
         onIonScroll={handleScroll}
       >
-        <Envelope handleToggle={handleToggle}></Envelope>
-        <WeddingVideo />
-        <WeddingGallery />
-        <FabVolume setVolume={setVolume} audioState={audioState} />
+        <div className="wedding-container">
+          <Envelope handleToggle={handleToggle}>
+            <FabVolume setVolume={setVolume} audioState={audioState} />
+          </Envelope>
+          <WeddingVideo />
+          <WeddingGallery isOpen={isOpen} />
+          <WeddingInvitation />
+        </div>
       </IonContent>
     </IonPage>
   );

@@ -3,8 +3,9 @@ import classes from "./Envelope.module.css";
 
 interface IProps {
   handleToggle: () => void;
+  children?: React.ReactNode;
 }
-const Envelope: FC<IProps> = ({ handleToggle }) => {
+const Envelope: FC<IProps> = ({ handleToggle, children }) => {
   const [open, setOpen] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const [showContent, setShowContent] = useState(false);
@@ -28,7 +29,7 @@ const Envelope: FC<IProps> = ({ handleToggle }) => {
   };
 
   if (showContent) {
-    return null;
+    return <>{children}</>;
   }
 
   return (

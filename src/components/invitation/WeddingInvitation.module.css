@@ -1,0 +1,208 @@
+/* WeddingInvitation.css */
+.invitationContent {
+  --background: linear-gradient(135deg, #f5f0eb 0%, #e8ddd3 100%);
+  margin: 0;
+  padding: 0;
+}
+
+.invitationContainer {
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(212, 175, 55, 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 50%,
+      rgba(212, 175, 55, 0.05) 0%,
+      transparent 50%
+    );
+}
+
+.invitationCard {
+  max-width: 600px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 50px 40px;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(212, 175, 55, 0.1);
+  position: relative;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.decorativeRing {
+  position: absolute;
+  font-size: 2.5rem;
+  opacity: 0.15;
+  animation: float 3s ease-in-out infinite;
+}
+
+.leftRing {
+  top: 20px;
+  left: 20px;
+  animation-delay: 0s;
+}
+
+.rightRing {
+  bottom: 20px;
+  right: 20px;
+  animation-delay: 1.5s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(10deg);
+  }
+}
+
+.invitationHeader {
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.greetingText {
+  font-family: "Georgia", serif;
+  font-size: 2rem;
+  color: #2c1810;
+  margin: 0;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+}
+
+.greetingText::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+}
+
+.invitationBody {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.invitationText {
+  font-family: "Georgia", serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #3d2c1b;
+  margin: 8px 0;
+}
+
+.invitationText strong {
+  color: #8b6914;
+  font-weight: 700;
+}
+
+.invitationText.highlight {
+  font-size: 1.3rem;
+  color: #2c1810;
+  font-weight: 500;
+  margin-top: 15px;
+  padding: 15px 0;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.eventDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 30px 0;
+  padding: 20px;
+  background: rgba(212, 175, 55, 0.05);
+  border-radius: 15px;
+}
+
+.detailItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-family: "Georgia", serif;
+  font-size: 1.1rem;
+  color: #3d2c1b;
+}
+
+.detailItem ion-icon {
+  color: #d4af37;
+  font-size: 1.4rem;
+}
+
+.divider {
+  text-align: center;
+  margin: 25px 0;
+  color: #d4af37;
+  font-size: 1.2rem;
+  opacity: 0.6;
+}
+
+.invitationFooter {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.footerText {
+  font-family: "Georgia", serif;
+  font-size: 1.1rem;
+  color: #5a3f2b;
+  letter-spacing: 1px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .invitationCard {
+    padding: 30px 20px;
+  }
+
+  .greetingText {
+    font-size: 1.6rem;
+  }
+
+  .invitationText {
+    font-size: 1rem;
+  }
+
+  .invitationText.highlight {
+    font-size: 1.1rem;
+  }
+
+  .detailItem {
+    font-size: 0.95rem;
+  }
+
+  .decorativeRing {
+    font-size: 1.8rem;
+  }
+}

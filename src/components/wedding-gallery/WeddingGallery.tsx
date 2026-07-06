@@ -15,14 +15,12 @@ interface Photo {
 }
 
 interface WeddingGalleryProps {
-  title?: string;
-  subtitle?: string;
-  photos?: Photo[];
+  isOpen: boolean;
 }
 
 const lastImage = GALLERY_IMAGES[GALLERY_IMAGES.length - 1];
 
-const WeddingGallery: React.FC<WeddingGalleryProps> = () => {
+const WeddingGallery: React.FC<WeddingGalleryProps> = ({ isOpen }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [images, setImages] = useState<Photo[]>([]);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -63,8 +61,18 @@ const WeddingGallery: React.FC<WeddingGalleryProps> = () => {
 
   useEffect(() => {
     // Баштапкы сүрөттү коюу
-    if (images.length === 0) {
-      handleChangeImage();
+
+    console.log(
+      "WeddingGallery useEffect: isOpen =",
+      isOpen,
+      "images.length =",
+      images.length,
+    );
+
+    if (isOpen) {
+      if (images.length === 0) {
+        handleChangeImage();
+      }
     }
 
     // Тазалоо
@@ -74,7 +82,7 @@ const WeddingGallery: React.FC<WeddingGalleryProps> = () => {
         timeoutRef.current = null;
       }
     };
-  }, [handleChangeImage, images.length]);
+  }, [handleChangeImage, images.length, isOpen]);
 
   const mainImage = GALLERY_IMAGES[activeIndex];
 
